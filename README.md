@@ -16,6 +16,6 @@ log('This', 'is', 'a', 'test.')
 
 And this outputs the current time before printout:
 
-```sh
+```
 16:20:00 INFO     This is a test.
 ```
