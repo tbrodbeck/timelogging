@@ -1,2 +1,5 @@
 dev.ipynb
 .DS_STORE
+build/
+dist/
+timelogging.egg-info/
