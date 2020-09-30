@@ -10,7 +10,7 @@ logging.basicConfig(
 def log(*args):
     """logs the arguments given
     this function enables a timestamp for every execution; this is a replacement for `print`"""
-    infoTxt = args[0]
+    infoTxt = args[0] if len(args) else ""
     for arg in args[1:]:
         infoTxt += " " + str(arg)
     logging.info(infoTxt)
