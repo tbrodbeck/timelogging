@@ -14,7 +14,7 @@ from timelogging import log
 log('This', 'is', 'a', 'test.')
 ```
 
-And this outputs the current time before printout:
+And this outputs the current time before the printout:
 
 ```
 16:20:00 INFO     This is a test.
