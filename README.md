@@ -4,7 +4,7 @@
 pip3 install timelogging
 ```
 
-# Use it
+# Usage
 
 The `log` function is designed to be a drop-in replacement for `print`:
 
