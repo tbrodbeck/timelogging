@@ -34,7 +34,7 @@ from timelogging import timeLog as log
 log('This', 'is', 'a', 'test.')
 ```
 
-And this outputs the current time before the printout:
+And this outputs the current time with the day before the printout:
 
 ```
 31 16:20:00  This is a test.
@@ -53,7 +53,7 @@ log = getLog('%Y-%m-%d %H:%M:%S')
 log('This', 'is', 'a', 'test.')
 ```
 
-And this outputs the current time before the printout:
+And this outputs your custom timestamp before the printout:
 
 ```
 2020-10-23 20:28:32  This is a test.
