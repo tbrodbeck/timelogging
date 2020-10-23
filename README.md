@@ -56,5 +56,5 @@ log('This', 'is', 'a', 'test.')
 And this outputs your custom timestamp before the printout:
 
 ```
-2020-10-23 20:28:32  This is a test.
+2020-12-31 16:20:00  This is a test.
 ```
