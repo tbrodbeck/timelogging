@@ -42,7 +42,7 @@ And this outputs the current time with the day before the printout:
 
 ## Cutom Log
 
-Additionally, you can also create a custom formatting for the `log` function. This method also helps avoiding to log unnessery import imformation of other libraries because function can be setup later.
+Additionally, you can also create a custom formatting for the `log` function. This method also helps avoiding to log unnecessary import imformation of other libraries because function can be setup later.
 
 You can also add the current day within the timestamp:
 
