@@ -1,6 +1,6 @@
 # Installation
 
-Install `timelogging` in you shell with the [Python Package Installer](https://pip.pypa.io/en/stable/):
+Install `timelogging` in your shell with the [Python Package Installer](https://pip.pypa.io/en/stable/):
 
 ```sh
 pip3 install timelogging
