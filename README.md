@@ -47,8 +47,8 @@ Additionally, you can also create a custom formatting for the `log` function. Th
 You can also add the current day within the timestamp:
 
 ```python3
-from timelogging import getLog
-log = getLog('%Y-%m-%d %H:%M:%S')
+from timelogging
+log = timelogging.getLog('%Y-%m-%d %H:%M:%S')
 
 log('This', 'is', 'a', 'test.')
 ```
