@@ -44,8 +44,6 @@ And this outputs the current time with the day before the printout:
 
 Additionally, you can also create a custom formatting for the `log` function. This method also helps avoiding to log unnecessary import imformation of other libraries because the function can be set up later.
 
-You can also add the current day within the timestamp:
-
 ```python3
 from timelogging
 log = timelogging.getLog('%Y-%m-%d %H:%M:%S')
