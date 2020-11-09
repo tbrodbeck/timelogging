@@ -42,7 +42,9 @@ And this outputs the current time with the day before the printout:
 
 ## Cutom Log
 
-Additionally, you can also create a custom formatting for the `log` function. This method also helps avoiding to log unnecessary import imformation of other libraries because the function can be set up later.
+Additionally, you can also create a custom formatting for the `log` function.
+
+The `getLog` function also helps avoiding to log unnecessary import imformation of other libraries when the function is called at a later stage of a python script.
 
 ```python3
 from timelogging
