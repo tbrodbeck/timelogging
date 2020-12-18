@@ -47,7 +47,7 @@ Additionally, you can also create a custom formatting for the `log` function.
 The `getLog` function also helps avoiding to log unnecessary import imformation of other libraries when the function is called at a later stage of a python script.
 
 ```python3
-from timelogging
+import timelogging
 log = timelogging.getLog('%Y-%m-%d %H:%M:%S')
 
 log('This is a log entry.')
