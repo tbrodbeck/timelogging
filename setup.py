@@ -5,7 +5,7 @@ with open("README.md", "r") as fh:
 
 setuptools.setup(
     name="timelogging",
-    version="2.1.0",
+    version="2.1.1",
     author="Tillmann Brodbeck",
     author_email="t.b@riseup.net",
     description="Small Logging Library",
