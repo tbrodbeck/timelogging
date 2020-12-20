@@ -2,13 +2,13 @@ import logging
 
 
 class Logger:
-    def __init__(self, datefmt="%H:%M:%S"):
+    def __init__(self, datefmt: str, startLevel: int):
         """datefmt: string representation of the timestamp"""
 
         self.logging = logging
         logging.basicConfig(
-            format="%(asctime)s  %(message)s",
-            level=logging.INFO,
+            format="%(asctime)s %(levelname)-7s %(message)s",
+            level=startLevel,
             datefmt=datefmt,
         )
 
@@ -21,8 +21,14 @@ class Logger:
         self.logging.info(infoTxt)
 
 
-def getLog(datefmt="%H:%M:%S"):
+def getLog(datefmt="%H:%M:%S", startLevel=logging.INFO):
     """create a log function quickly without having to use the constructor
     datefmt: string representation of the timestamp"""
-    logger = Logger(datefmt)
+    logger = Logger(datefmt, startLevel)
     return logger.log
+
+def startLogging():
+    logging.getLogger().setLevel(logging.INFO)
+
+def endLogging():
+    logging.getLogger().setLevel(logging.WARN)

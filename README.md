@@ -8,7 +8,8 @@ pip3 install timelogging
 
 # Usage
 
-## Time Log
+## Logging functionalities
+### Time Log
 
 The `log` function is designed to be a drop-in replacement for `print`:
 
@@ -21,10 +22,10 @@ log('This is a log entry.')
 And this outputs the current time before the printout:
 
 ```
-16:20:00  This is a log entry.
+16:20:00 INFO    This is a log entry.
 ```
 
-## Day Log
+### Day Log
 
 You can also add the current day within the timestamp:
 
@@ -37,10 +38,10 @@ log('This is a log entry.')
 And this outputs the current time with the day before the printout:
 
 ```
-31 16:20:00  This is a log entry.
+31 16:20:00 INFO    This is a log entry.
 ```
 
-## Cutom Log
+### Cutom Log
 
 Additionally, you can also create a custom formatting for the `log` function.
 
@@ -56,5 +57,23 @@ log('This is a log entry.')
 And this outputs your custom timestamp before the printout:
 
 ```
-2020-12-31 16:20:00  This is a log entry.
+2020-12-31 16:20:00 INFO    This is a log entry.
+```
+
+## Change log level
+The functions above set the log level immediately to `logging.INFO`. When this is not wanted, you can also import `timeLogLater`, `dayLogLater` to keep the log level at `logging.WARN` at start or set the `startLevel` parameter of the getLog function as you want.
+
+Then you can import the functions `startLogging` and `endLogging` to change the log level on the fly.
+```
+from timelogging.timeLogLater import log, startLogging, endLogging
+
+log('not seeable')
+startLogging()
+log('seeable')
+endLogging()
+log('not seeable')
+```
+This example only logs this output:
+```
+16:20:00 INFO    seeable
 ```
