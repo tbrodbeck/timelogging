@@ -60,7 +60,8 @@ And this outputs your custom timestamp before the printout:
 2020-12-31 16:20:00 INFO    This is a log entry.
 ```
 
-## Change log level
+## Changing the log level
+### Setting the log level globally
 The functions above set the log level immediately to `logging.INFO`. When this is not wanted, you can also import `timeLogLater`, `dayLogLater` to keep the log level at `logging.WARN` at start or set the `startLevel` parameter of the getLog function as you want.
 
 Then you can import the functions `startLogging` and `endLogging` to change the log level on the fly.
@@ -73,7 +74,20 @@ log('seeable')
 endLogging()
 log('not seeable')
 ```
-This example only logs this output:
+This example logs this output only:
+```
+16:20:00 INFO    seeable
+```
+
+### Changing the log level once
+This is possible with the function `logOnce`. Just import it as you would import `log`.
+```python
+from timelogging.timeLogLater import log, logOnce
+log('not seeable')
+logOnce('seeable')
+log('not seeable')
+```
+This example logs this output only:
 ```
 16:20:00 INFO    seeable
 ```

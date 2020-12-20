@@ -20,12 +20,16 @@ class Logger:
             infoTxt += " " + str(arg)
         self.logging.info(infoTxt)
 
+    def logOnce(self, *args):
+        startLogging()
+        self.log(*args)
+        endLogging()
 
 def getLog(datefmt="%H:%M:%S", startLevel=logging.INFO):
     """create a log function quickly without having to use the constructor
     datefmt: string representation of the timestamp"""
     logger = Logger(datefmt, startLevel)
-    return logger.log
+    return logger.log, logger.logOnce
 
 def startLogging():
     logging.getLogger().setLevel(logging.INFO)
