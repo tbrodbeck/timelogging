@@ -43,13 +43,11 @@ And this outputs the current time with the day before the printout:
 
 ### Cutom Log
 
-Additionally, you can also create a custom formatting for the `log` function.
-
-The `getLog` function also helps avoiding to log unnecessary import imformation of other libraries when the function is called at a later stage of a python script.
+Additionally, you can also create a custom timestamp formatting of the `log` function according to the [Python time formatting directives](https://docs.python.org/3/library/time.html#time.strftime) and a custom log level according to the [Python logging level values](https://docs.python.org/3/library/logging.html#levels):
 
 ```python
 import timelogging
-log = timelogging.getLog('%Y-%m-%d %H:%M:%S')
+log = timelogging.getLog(datefmt='%Y-%m-%d %H:%M:%S', level=20)
 
 log('This is a log entry.')
 ```
@@ -80,14 +78,14 @@ This example logs this output only:
 ```
 
 ### Changing the log level once
-This is possible with the function `logOnce`. Just import it as you would import `log`.
+This is possible with the function `logOnce`. It changes to log level to `logging.INFO` just for this log entry and after that it switches back to `logging.WARN`. Just import it as you would import `log`.
 ```python
 from timelogging.timeLogLater import log, logOnce
 log('not seeable')
 logOnce('seeable')
 log('not seeable')
 ```
-This example logs this output only:
+This example logs the output of `logOnce` only, because otherwise the log level is set to `logging.WARN`. This helps avoiding unwanted `INFO` logs:
 ```
 16:20:00 INFO    seeable
 ```
