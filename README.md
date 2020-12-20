@@ -43,12 +43,11 @@ And this outputs the current time with the day before the printout:
 
 ### Cutom Log
 
-Additionally, you can also create a custom timestamp formatting of the `log` function according to the [Python time formatting directives](https://docs.python.org/3/library/time.html#time.strftime) and a custom log start level according to the [Python logging level values](https://docs.python.org/3/library/logging.html#levels):
+Additionally, you can also create a custom timestamp formatting of the `log` function according to the [Python time formatting directives](https://docs.python.org/3/library/time.html#time.strftime) and a custom start log level according to the [Python logging level values](https://docs.python.org/3/library/logging.html#levels):
 
 ```python
-import timelogging
-log = timelogging.getLog(datefmt='%Y-%m-%d %H:%M:%S', startLevel=20)
-
+from timelogging import configLog, log
+configLog(timeFmt='%Y-%m-%d %H:%M:%S', startLevel=20)
 log('This is a log entry.')
 ```
 
@@ -60,7 +59,7 @@ And this outputs your custom timestamp before the printout:
 
 ## Changing the log level
 ### Setting the log level globally
-The functions above set the log level immediately to `logging.INFO`. When this is not wanted, you can also import `timeLogLater`, `dayLogLater` to keep the log level at `logging.WARN` at start or set the `startLevel` parameter of the getLog function as you want.
+The functions above set the log level immediately to `logging.INFO`. When this is not wanted, you can also import `timeLogLater`, `dayLogLater` to keep the log level at `logging.WARN` at start or set the `startLevel` parameter of the configLog function as you want.
 
 Then you can import the functions `startLogging` and `endLogging` to change the log level on the fly.
 ```python
@@ -78,7 +77,7 @@ This example logs this output only:
 ```
 
 ### Changing the log level to `INFO` for one log entry
-This is possible with the function `logOnce`. It changes the log level to `INFO` just for this log entry and after that it switches back to `WARN` (the default value). Simply use it as you would use `log`.
+This is possible with the function `logOnce`. It changes the log level to `INFO` just for this log entry and after that it switches back to `WARN` (the default level). Simply use it as you would use `log`.
 ```python
 from timelogging.timeLogLater import log, logOnce
 log('not seeable')

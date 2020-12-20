@@ -1,5 +1,4 @@
-from . import getLog, startLogging, endLogging
-
+from . import configLog, log, logOnce, startLogging, endLogging
 """shortcut import for time logging
 logs day and time"""
-log, logOnce = getLog("%d %H:%M:%S")
+configLog("%d %H:%M:%S")

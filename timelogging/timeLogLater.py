@@ -1,5 +1,3 @@
-from . import getLog, startLogging, endLogging
-
+from . import configLog, log, logOnce, startLogging, endLogging
 """ shortcut import for time logging """
-
-log, logOnce = getLog(startLevel=30)
+configLog(startLevel=30)
