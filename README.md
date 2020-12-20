@@ -43,11 +43,11 @@ And this outputs the current time with the day before the printout:
 
 ### Cutom Log
 
-Additionally, you can also create a custom timestamp formatting of the `log` function according to the [Python time formatting directives](https://docs.python.org/3/library/time.html#time.strftime) and a custom log level according to the [Python logging level values](https://docs.python.org/3/library/logging.html#levels):
+Additionally, you can also create a custom timestamp formatting of the `log` function according to the [Python time formatting directives](https://docs.python.org/3/library/time.html#time.strftime) and a custom log start level according to the [Python logging level values](https://docs.python.org/3/library/logging.html#levels):
 
 ```python
 import timelogging
-log = timelogging.getLog(datefmt='%Y-%m-%d %H:%M:%S', level=20)
+log = timelogging.getLog(datefmt='%Y-%m-%d %H:%M:%S', startLevel=20)
 
 log('This is a log entry.')
 ```
@@ -77,15 +77,15 @@ This example logs this output only:
 16:20:00 INFO    seeable
 ```
 
-### Changing the log level once
-This is possible with the function `logOnce`. It changes to log level to `logging.INFO` just for this log entry and after that it switches back to `logging.WARN`. Just import it as you would import `log`.
+### Changing the log level to `INFO` for one log entry
+This is possible with the function `logOnce`. It changes the log level to `INFO` just for this log entry and after that it switches back to `WARN` (the default value). Simply use it as you would use `log`.
 ```python
 from timelogging.timeLogLater import log, logOnce
 log('not seeable')
 logOnce('seeable')
 log('not seeable')
 ```
-This example logs the output of `logOnce` only, because otherwise the log level is set to `logging.WARN`. This helps avoiding unwanted `INFO` logs:
+This example logs the output of `logOnce` only, because otherwise the log level is set to `WARN`. This helps avoiding unwanted `INFO` logs:
 ```
 16:20:00 INFO    seeable
 ```
